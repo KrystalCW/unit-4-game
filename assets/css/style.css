@@ -1,0 +1,37 @@
+body {
+    background-image: url("../images/crystal-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    font-family: 'Special Elite', cursive;
+    background-color: black;
+    color: purple;
+}
+
+#intro, #goal-box, #wins-losses, #score-description, #crystal-score-box {
+    border-color: purple;
+    border-width: 5px;
+    background-color: #ccffff;
+}
+
+#jumbotron {
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#crystal1, #crystal2, #crystal2, #crystal4 {
+    display: inline-block;
+}
+
+.crystals {
+    width: 150px;
+    height: 200px;
+}
+
+.sections {
+    margin: 10px auto;
+}
