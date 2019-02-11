@@ -1,77 +1,64 @@
-var goal = Math.floor( Math.random() * 50) + 1;
-var crystalOneScore = Math.floor( Math.random() * 10) + 1;
-var crystalTwoScore = Math.floor( Math.random() * 10) + 1;
-var crystalThreeScore = Math.floor( Math.random() * 10) + 1;
-var crystalFourScore = Math.floor( Math.random() * 10) + 1;
+var goal = "";
+var crystalOneScore = "";
+var crystalTwoScore = "";
+var crystalThreeScore = "";
+var crystalFourScore = "";
 var scores = [];
+var winsCounter = 0;
+var lossesCounter = 0;
+const arrSum = arr => arr.reduce((a,b) => a + b, 0)
 
 function startGame() {
+    goal = Math.floor( Math.random() * 50) + 1;
     $("#goal").html(goal);
-    console.log(crystalOneScore);
-    console.log(crystalTwoScore);
-    console.log(crystalOneScore + crystalTwoScore);
+    crystalOneScore = Math.floor( Math.random() * 10) + 1;
+    crystalTwoScore = Math.floor( Math.random() * 10) + 1;
+    crystalThreeScore = Math.floor( Math.random() * 10) + 1;
+    crystalFourScore = Math.floor( Math.random() * 10) + 1;
+    scores = [];
+    $("#current-score").html(0);
 }
 
 function gamePlay() {
     $("#crystal1").on("click", function() {
         console.log(crystalOneScore);
         scores.push(crystalOneScore);
-        scoreKeeping();
+        $("#current-score").html(arrSum(scores));
+        winLose();
     })
     $("#crystal2").on("click", function() {
         console.log(crystalTwoScore);
         scores.push(crystalTwoScore);
-        scoreKeeping();
+        $("#current-score").html(arrSum(scores));
+        winLose();
     })
     $("#crystal3").on("click", function() {
         console.log(crystalThreeScore);
         scores.push(crystalThreeScore);
-        scoreKeeping();
+        $("#current-score").html(arrSum(scores));
+        winLose();
     })
     $("#crystal4").on("click", function() {
         console.log(crystalFourScore);
         scores.push(crystalFourScore);
-        scoreKeeping();
+        $("#current-score").html(arrSum(scores));
+        winLose();
     })
-
 }
 
-function scoreKeeping () {
-    console.log(scores);
-    var score = 0;
-    for (var i = 0; i < scores.length; i++) {
-        score += scores[i][1];
+function winLose() {
+    if (arrSum(scores) === goal) {
+        alert("You won! Good job!");
+        winsCounter++;
+        $("#wins").html(winsCounter);
+        startGame();
+    } else if (arrSum(scores) > goal) {
+        alert("Sorry, you lose :(");
+        lossesCounter++;
+        $("#losses").html(lossesCounter);
+        startGame();
     }
-    console.log(score);
 }
-
-
-// function startGame() {
-//     var goal = Math.floor( Math.random() * 50) + 1;
-//     $("#goal").html(goal);
-// }
-
-// function gamePlay() {
-//     $("#crystal1").on("click", function() {
-//         var crystalOneScore = Math.floor( Math.random() * 10) + 1;
-//         console.log(crystalOneScore)
-//     })
-
-//     $("#crystal2").on("click", function() {
-//         var crystalTwoScore = Math.floor( Math.random() * 10) + 1;
-//         console.log(crystalTwoScore)
-//     })
-
-//     $("#crystal3").on("click", function() {
-//         var crystalThreeScore = Math.floor( Math.random() * 10) + 1;
-//         console.log(crystalThreeScore)
-//     })
-
-//     $("#crystal4").on("click", function() {
-//         var crystalFourScore = Math.floor( Math.random() * 10) + 1;
-//         console.log(crystalFourScore)
-//     })
-// }
 
 startGame();
 gamePlay();
