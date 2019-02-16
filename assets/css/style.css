@@ -1,35 +1,63 @@
 body {
-    background-image: url("../images/crystal-background.jpg");
+    background-image: url("../images/forest-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Pacifico', cursive;
     background-color: black;
-    color: purple;
+    /* color: purple; */
 }
 
-#intro, #goal-box, #wins-losses, #score-description, #crystal-score-box {
-    border-color: purple;
-    border-width: 5px;
-    background-color: #ccffff;
+#intro, #goal-box, #wins-text, #losses-text, #score-description, #crystal-score-box {
+    color: #d5ec1d;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(59,65,27, .8);
+    border-color: #35371f;
+    border-width: 2px;
+    border-style: solid;
 }
 
-#jumbotron {
-    padding: 30px;
+#intro {
+    background-image: url("../images/text-background.jpg");
+    font-family: 'Nunito', sans-serif;
+    color: #35371f;
+}
+
+#goal-box, #score-description {
+    color: #bc92c4;
+}
+
+#wins-text, #losses-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:#a3334a;
 }
 
 h1 {
     text-align: center;
+    color: #d5ec1d;
+    font-size: 30px;
+    padding: 30px;
 }
 
-#crystal1, #crystal2, #crystal2, #crystal4 {
-    display: inline-block;
+#crystal1, #crystal2, #crystal3, #crystal4 {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border-color: #d5ec1d;
+    border-width: 2px;
+    border-style: solid;
+    /* background-color: yellow; */
 }
 
 .crystals {
-    width: 150px;
-    height: 200px;
+    /* width: 80px; */
+    margin-top: 30px;
+    height: 100px;
+    text-align: center;
+    /* /* background-color: yellow; */
 }
 
 .sections {
