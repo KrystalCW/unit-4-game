@@ -64,12 +64,12 @@ function winLose() {
         alert("You won! Good job!");
         winsCounter++;
         $("#wins").html(winsCounter);
-        setTimeout(startGame, 1000);
+        startGame();
     } else if (arrSum(scores) > goal) {
         alert("Sorry, you lose :(");
         lossesCounter++;
         $("#losses").html(lossesCounter);
-        setTimeout(startGame, 1000);
+        startGame();
     }
 }
 
